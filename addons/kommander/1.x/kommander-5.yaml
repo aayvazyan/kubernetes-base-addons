@@ -6,7 +6,7 @@ metadata:
   labels:
     kubeaddons.mesosphere.io/name: kommander
   annotations:
-    catalog.kubeaddons.mesosphere.io/addon-revision: "1.0.0-4"
+    catalog.kubeaddons.mesosphere.io/addon-revision: "1.0.0-5"
     appversion.kubeaddons.mesosphere.io/kommander: "1.0.0"
     endpoint.kubeaddons.mesosphere.io/kommander: /ops/portal/kommander/ui
     appversion.kubeaddons.mesosphere.io/thanos: 0.3.9
@@ -41,7 +41,7 @@ spec:
   chartReference:
     chart: kommander
     repo: https://timaa2k.github.io/charts
-    version: 0.3.28
+    version: 0.3.18
     values: |
       ---
       ingress:
