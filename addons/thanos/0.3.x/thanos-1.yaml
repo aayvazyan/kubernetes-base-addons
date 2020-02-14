@@ -27,13 +27,9 @@ spec:
   chartReference:
     chart: thanos
     repo: https://kubernetes-charts.banzaicloud.com
-    version: 0.3.14
+    version: 0.3.15
     values: |
       ---
-      image:
-        repository: quay.io/thanos/thanos
-        tag: v0.10.1
-        pullPolicy: IfNotPresent
       store:
         enabled: false
       bucket:
@@ -62,7 +58,10 @@ spec:
         serviceDiscoveryInterval: 5m
         # Add extra arguments to the compact service
         extraArgs:
-        - "--grpc-client-server-name=server.thanos.localhost.localdomain"
+          - "--store=prometheus-kubeaddons-prom-prometheus.kubeaddons.svc:10901"
+          - "--store=thanos-kubeaddons-store-grpc.kubeaddons.svc:10901"
+          - "--query.auto-downsampling"
+          - "--query.partial-response"
         http:
           service:
             labels:
@@ -80,6 +79,6 @@ spec:
             hosts:
               - ""
             tls: []
-      objstoreSecretOverride: ""
+      objstoreSecretOverride: "thanos-objstore-config"
       objstoreFile: ""
       objstore: []
