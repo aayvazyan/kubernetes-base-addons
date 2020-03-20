@@ -44,7 +44,7 @@ spec:
   chartReference:
     chart: prometheus-operator
     repo: https://aayvazyan.github.io/charts/staging
-    version: 8.7.1.1
+    version: 8.7.5
     values: |
       ---
       defaultRules:
