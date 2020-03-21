@@ -42,7 +42,7 @@ spec:
     - name: none
       enabled: true
   chartReference:
-    chart: prometheus-thanos
+    chart: prometheus-operator
     repo: https://aayvazyan.github.io/charts/staging
     version: 8.7.4
     values: |
