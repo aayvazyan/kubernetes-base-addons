@@ -40,9 +40,9 @@ spec:
     - name: none
       enabled: true
   chartReference:
-    chart: prometheus-thanos
-    repo: https://aayvazyan.github.io/charts/staging
-    version: 0.1.0
+    chart: prometheus-operator
+    repo: https://mesosphere.github.io/charts/staging
+    version: 8.3.11
     values: |
       ---
       defaultRules:
