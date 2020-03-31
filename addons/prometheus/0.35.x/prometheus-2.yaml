@@ -11,23 +11,20 @@ metadata:
     kubeaddons.mesosphere.io/hack-requires-defaultstorageclass: "true"
   annotations:
     catalog.kubeaddons.mesosphere.io/addon-revision: "0.35.0-2"
-    appversion.kubeaddons.mesosphere.io/prometheus-thanos: "0.1.0"
+    appversion.kubeaddons.mesosphere.io/prometheus-operator: "0.35.0"
     appversion.kubeaddons.mesosphere.io/prometheus: "2.15.2"
     appversion.kubeaddons.mesosphere.io/alertmanager: "0.20.0"
     appversion.kubeaddons.mesosphere.io/grafana: "6.4.2"
-    appversion.kubeaddons.mesosphere.io/thanos: "0.3.18"
     endpoint.kubeaddons.mesosphere.io/prometheus: "/ops/portal/prometheus"
     endpoint.kubeaddons.mesosphere.io/alertmanager: "/ops/portal/alertmanager"
     endpoint.kubeaddons.mesosphere.io/grafana: "/ops/portal/grafana"
     docs.kubeaddons.mesosphere.io/prometheus: "https://prometheus.io/docs/introduction/overview/"
     docs.kubeaddons.mesosphere.io/grafana: "https://grafana.com/docs/"
     docs.kubeaddons.mesosphere.io/alertmanager: "https://prometheus.io/docs/alerting/alertmanager/"
-    docs.kubeaddons.mesosphere.io/thanos: "https://thanos.io/getting-started.md/"
     values.chart.helm.kubeaddons.mesosphere.io/prometheus: "https://raw.githubusercontent.com/mesosphere/charts/a370c215c08ca7e50055902177141554de5444e6/staging/prometheus-operator/values.yaml"
     # The prometheus-operator chart from prior Konvoy releases can't be upgraded to this chart version.
     # See https://jira.d2iq.com/browse/DCOS-62924.
-    # helmv2.kubeaddons.mesosphere.io/upgrade-strategy: '[{"upgradeFrom": "<=5.19.7", "strategy": "delete"}]'
-    ## Commented the upgrade strategy due to the slow deployment issue with prometheus-thanos chart v0.2.2 described in the https://jira.d2iq.com/browse/D2IQ-65783
+    helmv2.kubeaddons.mesosphere.io/upgrade-strategy: '[{"upgradeFrom": "<=5.19.7", "strategy": "delete"}]'
 spec:
   kubernetes:
     minSupportedVersion: v1.15.6
